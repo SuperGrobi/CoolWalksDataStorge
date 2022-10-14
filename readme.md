@@ -43,3 +43,5 @@ these are the edges of the simplified graph. Each edge has a lot of data attache
 - shadowgeom: geometry of shadow, following the street line in WKT. There may be overlaps where shadows overlap. I am working on code to merge these overlaps
 - helper: whether the edge is a helper edge (missing if not, else true.)
 here again, mainly depending on whether the edge is a helper or real, some of the other entries will be missing. Parse with care.
+
+(Running the shadow intersection code takes about 3hours and 50 minutes (on my mac book air m1))
