@@ -48,4 +48,10 @@ these are the edges of the simplified graph. Each edge has a lot of data attache
 
 here again, mainly depending on whether the edge is a helper or real, some of the other entries will be missing. Parse with care.
 
+## graph.csv
+just a file containing some data for the whole graph. You probably won't need it. But, here you still get some description:
+- offset_dir: direction in which cyclic paths, such as roundabouts rotate, used to figure out the side on which people are driving
+- crs: coordinate reference system of all geometry in graph. This should be WKT.
+
+
 (Running the shadow intersection code now takes about 2 to 3 minutes (as opposed to the original (3hours and 50 minutes))(on my mac book air m1))
