@@ -25,12 +25,12 @@ here you have all the nodes in the simplified street network (currently, this is
 - lat: latitude of the node
 - lon: longitude of the node
 - vertex_id: id of the node in the graph (needed for edges)
-- end: if the node can only be accessed from one direction (remnant of debugging. Fairly easy to infer from the network.)
-- geopoint: Point in WKT Format. Duplicates lat and lon keywords (used in my code to transform the graph between different coordinate systems...)
+- pointgeom: Point in WKT Format. Duplicates lat and lon keywords (used in my code to transform the graph between different coordinate systems... ignore... or use... I don't care.)
 - helper: whether the node is a helper node. (missing if not helper, else true...(equivalent to osm_id == 0))
 
 ## edges.csv
 these are the edges of the simplified graph. Each edge has a lot of data attached to it...
+
 - osm_id: id of OSM way associated with this edge (not unique)
 - geomlength: dummy data for the length of this edge.
 - src_id: id of source vertex (references vertex_id)
@@ -41,7 +41,11 @@ these are the edges of the simplified graph. Each edge has a lot of data attache
 - full_length: length of road in [m]
 - shadowed_part_length: sum on lengths in individual shadows (should be >= shadowed_length (if this is not the case (up to numerical fluctuations in 1e-6 or something, let me know, that would be bad.))) (debugging property, I did not yet delete)
 - shadowgeom: geometry of shadow, following the street line in WKT. There may be overlaps where shadows overlap. I am working on code to merge these overlaps
-- helper: whether the edge is a helper edge (missing if not, else true.)
+- helper: whether the edge is a helper edge
+- tags: dictionary containing the tags of the original way. not really relevant. Ignore if you will.
+- parsing_direction (direction in which I had to go through the original way to get the geometry for this edge. super-ignore please.)
+- shadowpartgeom (geometry of shadowintersections before unifying. ignore please)
+
 here again, mainly depending on whether the edge is a helper or real, some of the other entries will be missing. Parse with care.
 
-(Running the shadow intersection code takes about 3hours and 50 minutes (on my mac book air m1))
+(Running the shadow intersection code now takes about 2 to 3 minutes (as opposed to the original (3hours and 50 minutes))(on my mac book air m1))
