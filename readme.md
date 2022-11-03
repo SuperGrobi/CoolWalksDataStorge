@@ -32,7 +32,7 @@ here you have all the nodes in the simplified street network (currently, this is
 these are the edges of the simplified graph. Each edge has a lot of data attached to it...
 
 - osm_id: id of OSM way associated with this edge (not unique)
-- geomlength: dummy data for the length of this edge.
+- geomlength: always zero. I should check why this thing is still here...
 - src_id: id of source vertex (references vertex_id)
 - dst_id: id of destination vertex (references vertex_id) (be carefull about the order. The graph is directed.)
 - ~~geolinestring~~ edgegeom: linestring of the actual streets connecting the source and destination in WKT.
