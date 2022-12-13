@@ -14,7 +14,7 @@ The following columns are available:
 - Shape_Length, Area, BNG_Area: circumference, and area of the footprint. Also not so interesting, maybe to validate parsing or something like that (be carefull about units, these should be in powers of meters...)
 
 ## shadows.csv
-this file contains the shadows of all the buildings in buildings.csv, using the key height_mean as height data. The shadows represent the shadows at 2022-10-07T20:30:00 (GMT+1)
+this file contains the shadows of all the buildings in buildings.csv, using the key height_mean as height data. The shadows represent the shadows at 2022-10-07T17:20:00 (GMT+1) (it turns out that I messed up the inputs to functions I wrote. At 20:30 of the same day, the sun is already set since about 2 hours.)
 - geometry: same structure as in buildings.csv
 - id: id of building the shadow belongs to.
 
